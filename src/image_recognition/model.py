@@ -14,5 +14,5 @@ def build_model(num_classes: int, backbone: str = "resnet18", pretrained: bool =
         in_feats = m.classifier[1].in_features
         m.classifier[1] = nn.Linear(in_feats, num_classes)
         return m
-    # else:
-    #     raise ValueError("Unsupported backbone. Choose 'resnet18' or 'efficientnet_b0'.")
+    else:
+        raise ValueError("Unsupported backbone. Choose 'resnet18' or 'efficientnet_b0'.")
